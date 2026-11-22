@@ -97,7 +97,9 @@ function calculateTotals() {
     document.getElementById("total-units").textContent = total_units.toFixed(1);
     document.getElementById("top-appliance").textContent = appliances[biggest_ind].name;
    
-    document.getElementById("total-bill").textContent = calculateBill(total_units).toFixed(2);
+    document.getElementById("total-bill").textContent = calculateBill(total_units).toLocaleString('en-US',
+    {minimumFractionDigits: 2,
+    maximumFractionDigits: 2});
 
 }
 
