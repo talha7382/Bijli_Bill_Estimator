@@ -1,6 +1,7 @@
 
 let appliances = [];
 
+// Tariff Slabs for Units from KE Website
 const slabs = [
     {upTo: 100, rate: 22.44},
     {upTo: 200, rate: 28.91},
@@ -17,12 +18,6 @@ const input_name = document.getElementById("appliance-name");
 const input_watts = document.getElementById("watts");
 const input_hours = document.getElementById("hours/day");
 const add_btn = document.getElementById("add-btn");
-
-const table_body = document.getElementById("appliance-list");
-
-const total_units = document.getElementById("total-units");
-const total_bill = document.getElementById("total-bill");
-const top_appliance = document.getElementById("top-appliance");
 
 add_btn.addEventListener("click", function () {
         let name = input_name.value.trim();
@@ -102,7 +97,7 @@ function calculateTotals() {
     document.getElementById("total-units").textContent = total_units.toFixed(1);
     document.getElementById("top-appliance").textContent = appliances[biggest_ind].name;
    
-    document.getElementById("total-bill").textContent = calculateBill(total_units);
+    document.getElementById("total-bill").textContent = calculateBill(total_units).toFixed(2);
 
 }
 
