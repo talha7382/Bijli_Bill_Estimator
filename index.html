@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bijli Bill Estimator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bijli Bill Estimator</h1>
+        <p>Add your appliances and see your estimated monthly electricity bill.</p>
+    </header>
+
+    <main class="container">
+
+        <section id="form-section" class="card">
+            <h2>Add an Appliance</h2>
+
+                <label for="appliance-name">Appliance name</label>
+                <input type="text" id="appliance-name" placeholder="eg. Air Fryer">
+                
+                <label for="watts">Watts</label>
+                <input type="number" id="watts" placeholder="eg. 300" min="1">
+                
+                <label for="hours/day">Hours used per day</label>
+                <input type="number" id="hours/day" placeholder="eg. 8" min="0" max="24">
+
+                <button id="add-btn">Add Appliance</button>
+        </section>
+
+        <section id="table-section" class="card">
+            <h2>Your Appliances</h2>
+
+            <table border="4">
+                <thead> 
+                    <tr> 
+                        <th>Name</th>
+                        <th>Watts</th> 
+                        <th>Hours/day</th> 
+                        <th>Units/month</th> 
+                        <th>Remove</th>
+                    </tr> 
+                </thead> 
+                <tbody id="appliance-list"> 
+
+                </tbody> 
+            </table>
+        </section>
+
+        <section id="results-section" class="card">
+            <h2>Results</h2>
+
+            <p>Total units per month: <span id="total-units">0</span></p>
+            <p>Total bill: <span id="total-bill"></span>0</p>
+            <p>Top Appliance: <span id="top-appliance"></span>None yet</p>
+
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+
+    <footer>
+        <p>Bills are estimates only!</p>
+    </footer>
+</body>
+</html>
